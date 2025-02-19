@@ -19,6 +19,17 @@ No macOS/Linux:
 source venv/bin/activate
 
 Para executar o projeto:
+
 pip install -r requirements.txt
+
 python manage.py runserver
+
+### Passo 2: Criar Questões e Respostas da Enquente
+
+Acesse:
+
+localhost:8000/admin: Para criar questões e respostas
+
+localhost:8000/polls: Para acessar a enquente
+
 
