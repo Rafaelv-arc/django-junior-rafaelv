@@ -1,0 +1,19 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'polls/style.css' %}">
+
+<h1>Recent Polls</h1> 
+
+{% if latest_question_list %}
+    <ul>
+    {% for question in latest_question_list %}
+        <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+        Total Votes: {{ question.total_votes_count }}<br>
+        Has Votes ? {% if question.has_votes_status %}✅ Sim{% else %}❌ Não{% endif %}
+        <br><br>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+

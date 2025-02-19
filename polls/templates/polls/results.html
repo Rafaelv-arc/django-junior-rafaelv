@@ -1,0 +1,16 @@
+<h1>Results Polls</h1>
+
+<h1>{{ question.question_text }}</h1>
+
+<ul>
+{% for choice in question.choice_set.all %}
+    <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
+{% endfor %}
+</ul>
+
+<p><strong>Total Votes:</strong> {{ total_votes }}</p>
+<p><strong>Has Votes ?</strong> {% if has_votes %}✅ Sim{% else %}❌ Não{% endif %}</p>
+
+<a href="{% url 'polls:detail' question.id %}">Vote Again ?</a><br>
+<a href="{% url 'polls:index' %}">Return Home</a>
+
