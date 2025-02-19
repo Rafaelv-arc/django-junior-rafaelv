@@ -18,7 +18,7 @@ Windows:
 No macOS/Linux:
 source venv/bin/activate
 
-Para executar o projeto:
+### Para executar o projeto:
 
 pip install -r requirements.txt
 
